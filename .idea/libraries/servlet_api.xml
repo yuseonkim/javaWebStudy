@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="servlet-api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../라이브러리/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../라이브러리/tomcat-dbcp-7.0.30.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
