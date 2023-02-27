@@ -17,7 +17,20 @@
     <param-name>menu_goods</param-name>
     <param-value>상품조회 상품등록 상품수정 상품삭제</param-value>
   </context-param>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/err/error_404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/err/error_500.jsp</location>
+  </error-page>
+  <welcome-file-list>
+    <welcome-file>/ch12/ex02/main.jsp</welcome-file>
+    <welcome-file>/ch12/ex02/add.jsp</welcome-file>
+    <welcome-file>/ch12/ex02/add2.jsp</welcome-file>
 
+  </welcome-file-list>
   <resource-ref>
     <description>connection</description>
     <res-ref-name>jdbc/mysql</res-ref-name>

@@ -17,6 +17,7 @@ public class MemberVO {
         this.id = id;
     }
 
+    public MemberVO(){}
     public MemberVO(String id, String pw) {
         this.id = id;
         this.pw = pw;

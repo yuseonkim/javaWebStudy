@@ -25,6 +25,38 @@ public class MemberDAO {
         }
     }
 
+    public List listMember(MemberVO memberVO){
+        List membersList = new ArrayList();
+        String _name = memberVO.getName();
+        try{
+            con = dataFactory.getConnection();
+            String query = "select * from t_member";
+            if((_name != null && _name.length() != 0)){
+                query +=" where name=?";
+                pstmt = con.prepareStatement(query);
+                pstmt.setString(1,_name);
+            }else{
+                pstmt = con.prepareStatement(query);
+            }
+            System.out.println("preparedStatement : " + query);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()){
+                String id = rs.getString("id");
+                String pwd=  rs.getString("pw");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                Date joinDate =rs.getDate("joinDate");
+                MemberVO vo = new MemberVO(id,pwd,name,email,joinDate);
+                membersList.add(vo);
+            }
+            rs.close();
+            pstmt.close();
+            con.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return membersList;
+    }
     public List listMember(){
         List list = new ArrayList();
         try{
